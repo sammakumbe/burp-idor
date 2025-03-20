@@ -1,0 +1,16 @@
+idor_patterns:
+  - id
+  - user_id
+  - account_id
+sensitive_keywords:
+  - user
+  - email
+  - profile
+session_headers:
+  - Cookie
+  - Authorization
+max_threads: 8
+response_status:
+  - "200 OK"
+test_increment: 1
+hf_model: "distilbert-base-uncased"
