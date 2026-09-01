@@ -2,7 +2,7 @@ import base64
 import json
 import re
 from typing import List, Dict, Optional, Union
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, unquote
 from bs4 import BeautifulSoup
 import argparse
 import sys
@@ -155,6 +155,7 @@ class IDORAnalyzer:
                 for pair in body.split('&'):
                     if '=' in pair:
                         k, v = pair.split('=', 1)
+                        k, v = unquote(k), unquote(v)
                         params[k] = [v]
             elif 'application/json' in body.lower():
                 body = body.split('\r\n\r\n')[-1]
